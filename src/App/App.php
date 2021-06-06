@@ -18,6 +18,14 @@ $settings = require __DIR__ . '/Settings.php';
 $app = new \Slim\App($settings);
 $container = $app->getContainer();
 
-require __DIR__ . '/Services.php';
+use Psr\Container\ContainerInterface;
+use Src\Infrastructure\Services\EmpleadoService;
+use Src\Infrastructure\Services\SecurityService;
+
+$container['security_service'] = new SecurityService;
+$container['empleadoService'] = new EmpleadoService;
+
+
+// require __DIR__ . '/Services.php';
 require __DIR__ . '/Routes.php';
 $app->run();
