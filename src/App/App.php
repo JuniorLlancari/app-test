@@ -11,7 +11,7 @@ if (file_exists($envFile)) {
 
 
 // $dotenv->required(['DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASS']);
-// $settings = require __DIR__ . '/Settings.php';
+// $settings = require __DIR__ . '/Settings.php'; 
 
 $app = new \Slim\App();
 $container = $app->getContainer();
