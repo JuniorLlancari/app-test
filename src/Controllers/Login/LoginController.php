@@ -104,8 +104,8 @@ class LoginController extends BaseController
     public function LoginTest(Request $request, Response $response, array $args)
     {
          
-        $data=$this->_container->empleado_Service->getTest('DS');
-        return $response->withJson($data);
+        // $data=$this->_container->empleado_Service->getTest('DS');
+        return $response->withJson('asdsad');
         // return $this->showOne($response,$isValid);
 
         // return $this->showOne($isValid);

@@ -19,9 +19,9 @@ $app->group('/api', function ()  {
    
     $this->GROUP('/v1', function () {
         
-        $this->POST('/loginEmpleado', Login\LoginController::class . ':LoginEmpleado');
+        // $this->POST('/loginEmpleado', Login\LoginController::class . ':LoginEmpleado');
         // $this->GET('/decode', Login\DecodeController::class . ':DecodeToken')->add(new Middleware());
-        // $this->GET('/test', Login\LoginController::class . ':LoginTest');//->add(new Middleware());
+        $this->GET('/test', Login\LoginController::class . ':LoginTest');//->add(new Middleware());
 
 
         // $this->GROUP('/empleado', function () {
