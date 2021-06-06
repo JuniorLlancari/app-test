@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../../vendor/autoload.php';
 $baseDir = __DIR__ . '/../../';
-
 $dotenv = Dotenv\Dotenv::createImmutable($baseDir);
 $envFile = $baseDir . '.env';
 if (file_exists($envFile)) {
@@ -12,10 +10,10 @@ if (file_exists($envFile)) {
 }
 
 
-$dotenv->required(['DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASS']);
-$settings = require __DIR__ . '/Settings.php';
+// $dotenv->required(['DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASS']);
+// $settings = require __DIR__ . '/Settings.php';
 
-$app = new \Slim\App($settings);
+$app = new \Slim\App();
 $container = $app->getContainer();
 
 use Psr\Container\ContainerInterface;
