@@ -43,7 +43,7 @@ class LoginController extends BaseController
     public function IsValidEmpleado(Login $login)
     {
          
-        $result=$this->_container->security_service->GetCredentialsByEmpleado($login->getUserName());
+        $result=$this->_container->security_Service->GetCredentialsByEmpleado($login->getUserName());
         
         if($result){
            // return $data;
@@ -104,8 +104,8 @@ class LoginController extends BaseController
     public function LoginTest(Request $request, Response $response, array $args)
     {
          
-        return $response->withJson('Junior ssi' );
-
+        $data=$this->_container->empleado_Service->getTest('DS');
+        return $response->withJson($data);
         // return $this->showOne($response,$isValid);
 
         // return $this->showOne($isValid);

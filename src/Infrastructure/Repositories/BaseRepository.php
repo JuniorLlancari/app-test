@@ -9,10 +9,26 @@ use Interop\Container\ContainerInterface;
 abstract class BaseRepository
 {
  
+    protected \PDO $database;
     public $_db;
     public function __construct(){
         $this->_db=DbContext::get();
     }
+
+
+    // public function __construct(\PDO $database)
+    // {
+    //     $this->database = $database;
+    // }
+
+    // protected function getDb(): \PDO
+    // {
+    //     return $this->database;
+    // }
+
+
+
+
     // public function __construct(ContainerInterface $container)
     // {
     //     $this->_db = $container['db'];

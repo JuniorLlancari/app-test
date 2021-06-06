@@ -13,11 +13,17 @@ use Src\Infrastructure\Interfaces\UserServiceInterface;
 class UserService //implements UserServiceInterface
 {
     private $_userRepository;
-
+    
     public function __construct()
     {
         $this->_userRepository = new UserRepository();
     }
+    
+    private $userRepository;
+    public function __construct(UserRepository $userRepository) {
+        $this->userRepository = $userRepository;
+    }
+
 
 
     public function getUsersByPage(array $params) //: array

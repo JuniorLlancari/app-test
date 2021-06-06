@@ -5,6 +5,7 @@ use PDO;
 use PDOException;
 // use PDO;
  // use Kodoti\Database\DbProvider;
+use Psr\Container\ContainerInterface;
 use Src\Infrastructure\Repositories\EmpleadoRepository;
 // use Src\Infrastructure\Interfaces\UserServiceInterface;
 
@@ -12,12 +13,23 @@ use Src\Infrastructure\Repositories\EmpleadoRepository;
 
 class EmpleadoService //implements UserServiceInterface
 {
-    private $_empleadoRepository;
+    // private $_empleadoRepository;
 
-    public function __construct()
-    {
-        $this->_empleadoRepository = new EmpleadoRepository();
+    // public function __construct()
+    // {
+    //     $this->_empleadoRepository = new EmpleadoRepository();
+    // }
+    private EmpleadoRepository $_empRepository;
+
+    // private $_container;
+    public function __construct() {
+        $this->_empRepository = new EmpleadoRepository();
     }
+    // public function __construct(ContainerInterface $container)
+    // {
+    //     $this->_container = $container;
+    // }
+
 
      
     public function getEmpleados() //: array
@@ -30,13 +42,14 @@ class EmpleadoService //implements UserServiceInterface
            // $page_number=$params['page_number'];
          
            // $page_size=$params['page_size'];
-        //    $user_name=$params['user_name'];
-        //    $user_name='juan';
-        //     $page_number=1;
-        //     $page_size=10;
-            // $result=$this->_userRepository->findAll();
+           // $user_name=$params['user_name'];
+           // $user_name='juan';
+           // $page_number=1;
+           // $page_size=10;
+            //$result=$this->_userRepository->findAll();
             
-            $result=$this->_empleadoRepository->findAll();
+            // $result=$this->_empleadoRepository->findAll();
+            $result=$this->_empRepository->findAll();
 
         } catch (PDOException $ex) {
 
@@ -46,7 +59,13 @@ class EmpleadoService //implements UserServiceInterface
     }
  
 
- 
+    public function getTest() //: array
+    {
+        // $result=$this->_empleadoRepository->findAll();
+        $result=$this->_empRepository->findAll();
+
+        return $result;
+    }
 
 
 
