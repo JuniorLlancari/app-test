@@ -1,7 +1,7 @@
 {
   "autoload": {
     "psr-4": {
-      "Src\\": "Src/"
+      "Src\\": "src/"
     }
   },
   "require": {
@@ -13,3 +13,4 @@
     "slim/twig-view": "^2.1"
   }
 }
+ 

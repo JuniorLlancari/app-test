@@ -1,6 +1,5 @@
 <?php
-
-namespace Src\Controllers\Login;
+namespace src\Controllers\Login;
 
 use PDOException;
 use Firebase\JWT\JWT;
