@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Src\\": "Src/"
+    }
+  },
+  "require": {
+    "slim/slim": "3.0",
+    "firebase/php-jwt": "^5.0",
+    "ramsey/uuid": "^4.0",
+    "luecano/numero-a-letras": "^2.1",
+    "vlucas/phpdotenv": "^5.3",
+    "slim/twig-view": "^2.1"
+  }
+}
